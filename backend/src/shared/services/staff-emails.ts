@@ -58,7 +58,7 @@ export function interviewerBookedEmail(input: {
             ? [
                 emailDetailRow(
                   "Meeting link",
-                  `<a href="${escapeHtml(input.meetingUrl)}" style="color:#145962;word-break:break-all">${escapeHtml(input.meetingUrl)}</a>`,
+                  `<a href="${escapeHtml(input.meetingUrl)}" style="color:#0b5bd3;word-break:break-all">${escapeHtml(input.meetingUrl)}</a>`,
                 ),
               ]
             : input.eventType === "onsite"

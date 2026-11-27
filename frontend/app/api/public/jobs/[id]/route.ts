@@ -18,7 +18,7 @@ function backendBaseUrl(): string | null {
 
 export async function GET(
   request: NextRequest,
-  context: { params: Promise<{ id: string }> | { id: string } },
+  context: { params: Promise<{ id: string }> },
 ) {
   const base = backendBaseUrl();
   if (!base) {
@@ -31,7 +31,7 @@ export async function GET(
     );
   }
 
-  const { id } = await Promise.resolve(context.params);
+  const { id } = await context.params;
   if (!id || !/^\d+$/.test(id)) {
     return NextResponse.json(
       { error: "Invalid job id" },

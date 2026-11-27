@@ -71,7 +71,7 @@ export function ButtonView({ node, updateAttributes, deleteNode, editor, getPos,
             }
           >
             {/* Drawn like the real email button in email-layout.ts */}
-            <span className="pointer-events-none inline-block rounded-md bg-[#145962] px-[22px] py-3 text-[15px] leading-tight font-semibold text-white">
+            <span className="pointer-events-none inline-block rounded-md bg-[#0b5bd3] px-[22px] py-3 text-[15px] leading-tight font-semibold text-white">
               {label || "Button text"}
             </span>
           </PopoverTrigger>

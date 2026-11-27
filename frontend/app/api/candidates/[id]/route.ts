@@ -5,10 +5,10 @@ import { getApiToken } from "@/lib/auth/session";
 
 export async function PATCH(
   req: Request,
-  context: { params: Promise<{ id: string }> | { id: string } },
+  context: { params: Promise<{ id: string }> },
 ) {
   try {
-    const { id } = await Promise.resolve(context.params);
+    const { id } = await context.params;
     if (!id) {
       return NextResponse.json(
         { error: "Candidate ID is required" },

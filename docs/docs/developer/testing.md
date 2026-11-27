@@ -50,6 +50,19 @@ These catch what unit tests cannot: real SQL errors, wrong column names, broken 
 
 Note that no server is started on port 8080. Supertest imports the Express app directly and binds it to a random free port for the duration of each request, so integration tests never conflict with a running dev server.
 
+### Candidate notes and applications
+
+Candidate notes have API and database coverage in `backend/tests/integration/candidate-notes.test.ts`: team access, note creation, edits, deletion, candidate isolation, and the stage captured when a note is created. `backend/tests/unit/candidate-notes.test.ts` covers validation and mutation scoping, and `frontend/tests/candidate-notes.test.tsx` covers the notes list, Markdown popup and actions.
+
+The applicant form has frontend coverage in `frontend/tests/job-application-form.test.tsx`. Backend application and resume flows are covered by `backend/tests/integration/apply-answers.test.ts`, `public-responses.test.ts`, `core-flows.test.ts`, and `cv-storage.test.ts`. These tests do not replace an end-to-end browser submission.
+
+With the test database running and migrated, run the focused tests from the repository root:
+
+```bash
+pnpm --filter ./backend exec vitest run tests/integration/candidate-notes.test.ts tests/unit/candidate-notes.test.ts tests/integration/apply-answers.test.ts tests/integration/public-responses.test.ts tests/integration/core-flows.test.ts tests/integration/cv-storage.test.ts
+pnpm --filter ./frontend exec vitest run tests/candidate-notes.test.tsx tests/job-application-form.test.tsx
+```
+
 ### End-to-end (E2E) tests
 
 An E2E test opens a real browser and uses the app the way a person would. The whole stack runs: Next.js frontend, Express backend, and Postgres.

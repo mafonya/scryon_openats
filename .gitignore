@@ -4,3 +4,6 @@ playwright-report/
 playwright/.cache/
 # Test coverage reports
 coverage/
+
+# Keep backend source visible when a global ignore contains "backend".
+!/backend/

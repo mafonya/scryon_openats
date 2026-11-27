@@ -1,0 +1,1 @@
+ALTER TABLE "candidate_notes" ADD COLUMN "stage_name" text;

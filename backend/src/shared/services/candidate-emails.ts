@@ -64,7 +64,7 @@ function compose(
   };
 }
 const link = (url: string) =>
-  `<a href="${escapeHtml(url)}" style="color:#145962;word-break:break-all">${escapeHtml(url)}</a>`;
+  `<a href="${escapeHtml(url)}" style="color:#0b5bd3;word-break:break-all">${escapeHtml(url)}</a>`;
 
 export function applicationReceivedEmail(input: Common & { candidateName: string; jobTitle: string }): BuiltEmail {
   return compose(

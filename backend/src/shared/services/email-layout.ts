@@ -10,7 +10,7 @@
  */
 
 /** Keep in sync with --theme-color in frontend/app/globals.css. */
-export const EMAIL_BRAND_COLOR = "#145962";
+export const EMAIL_BRAND_COLOR = "#0b5bd3";
 
 const FONT =
   "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif";
